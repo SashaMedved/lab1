@@ -1,17 +1,17 @@
-def multiplication(num):
-	count = 0
-	while num >= 10:
-		result = 1
-		for digit in str(num):
-			result *= digit
-		num = result
-		count += 1
-	return count
+def multiplication(n):
+    count = 0
+    while n >= 10:
+        result = 1
+        while n > 0:
+            result *= n % 10
+            n //= 10
+        n = result
+        count += 1
+    return count
 
-num = 39
-result = multiplication(n)
-print(f"Количество операций для числа {n}: {result}")
-
+number = int(input("Введите число: "))
+result = multiplication(number)
+print(f"Количество шагов для числа {number}: {result}")
 
 
 def test_multiplication():
